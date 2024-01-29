@@ -25,6 +25,14 @@ async def randNum(ctx, number: int):
     value = random.randint(1, number)
     await ctx.send(f"Your random number is {value}")
 
+@bot.event
+async def on_ready():
+    print(f"Logged in as {bot.user.name}")
+
+@bot.event
+async def on_message(message):
+    print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
+    await bot.process_commands(message)
 bot.run(TOKEN)
 
 
