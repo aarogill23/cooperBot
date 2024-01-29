@@ -22,6 +22,9 @@ class myClient(discord.Client):
         
     async def on_message_delete(self, message):
         print(f"Deleted message from {message.author}: {message.content}")
+    
+    async def on_message_edit(self, before, after):
+        print(f"Edited message from {before.author}: {before.content} to {after.content}")
 
 intents = discord.Intents.default()
 intents.message_content = True
