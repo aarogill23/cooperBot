@@ -1,0 +1,2 @@
+# cooperBot
+ Bot for Discord
